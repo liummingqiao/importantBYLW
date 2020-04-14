@@ -1,0 +1,157 @@
+@import "./variable";
+
+$base-fond-size: 1rem;
+$spacing-base-size: 1rem;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 13px;
+  outline: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  line-height: 1.3em;
+  background: #f1f1f1;
+}
+
+a {
+  color: #999;
+}
+p {
+  line-height: 1.9em;
+  
+}
+
+.d-flex {
+  display: flex;
+}
+.flex-d {
+  flex-direction: column;
+}
+
+.f-1 {
+  flex-grow: 1;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-wrap_no {
+  flex-wrap: nowrap;
+}
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100px;
+}
+.bt {
+  border: none;
+  border-radius: 0.1538rem;
+  font-size: map-get($font-sizes, "sm") * $base-fond-size;
+}
+.text-ellipsis {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-hidden {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.nav_all {
+  .nav_item {
+    padding-bottom: 0.2rem;
+    border-bottom: 3px solid transparent;
+    &.active {
+      border-bottom: 3px solid white;
+    }
+  }
+}
+.sprite {
+  background: url(../images/index.png) no-repeat 0 0;
+  display: inline-block;
+  background-size: 28.8462rem;
+  &.sprite-new {
+    width: 23px;
+    height: 20px;
+    background-position: 63.546% 15.517%;
+  }
+  &.sprite-up {
+    width: 10px;
+    height: 10px;
+    background-position: 38.577% 52.076%;
+  }
+}
+
+@each $colorKey, $color in $colors {
+  .text-#{$colorKey} {
+    color: $color;
+  }
+}
+@each $colorKey, $color in $colors {
+  .bg-#{$colorKey} {
+    background: $color;
+  }
+}
+
+@each $var in (left, center, right) {
+  .text-#{$var} {
+    text-align: $var !important ;
+  }
+}
+@each $font-sizeKey, $font-size in $font-sizes {
+  .fs-#{$font-sizeKey} {
+    font-size: $font-size * $base-fond-size;
+  }
+}
+
+@each $key, $value in $justify-contents {
+  .jc-#{$key} {
+    justify-content: $value;
+  }
+}
+
+@each $key, $value in $at {
+  .ai-#{$key} {
+    align-items: $value;
+  }
+}
+
+@each $typeKey, $type in $spacing-types {
+  //m-1
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}-#{$sizeKey} {
+      #{$type}: $size * $spacing-base-size;
+    }
+  }
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}x-#{$sizeKey} {
+      #{$type}-left: $size * $spacing-base-size;
+      #{$type}-right: $size * $spacing-base-size;
+    }
+  }
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}y-#{$sizeKey} {
+      #{$type}-top: $size * $spacing-base-size;
+      #{$type}-bottom: $size * $spacing-base-size;
+    }
+  }
+  @each $directionKey, $direction in $spacing-directions {
+    @each $sizeKey, $size in $spacing-sizes {
+      .#{$typeKey}#{$directionKey}-#{$sizeKey} {
+        #{$type}-#{$direction}: $size * $spacing-base-size;
+      }
+    }
+  }
+}
+@each $dic in (left,right,top,bottom) {
+  .border-#{$dic}{
+     border-#{$dic}: 0.0769rem  solid #d4d4d5
+  }
+}
