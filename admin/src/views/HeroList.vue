@@ -4,7 +4,10 @@
     <el-table :data="items">
       <el-table-column prop="_id" label="ID" width="280"></el-table-column>
       <el-table-column prop="name" label="名字"></el-table-column>
-      <el-table-column prop="avatar" label="头像">
+      <el-table-column prop="title" label="评价"></el-table-column>
+      <el-table-column prop="numQian" label="价钱(元/平方米)"></el-table-column>
+      <el-table-column prop="numAll" label="面积（平方米）"></el-table-column>
+      <el-table-column prop="avatar" label="图像">
         <template slot-scope="scope">
           <img :src="scope.row.avatar" style="height:3rem;">
         </template>
@@ -34,6 +37,7 @@ export default {
     async fetch() {
       const res = await this.$http.get("rest/heroes");
       this.items = res.data;
+       console.log(this.items)
     },
     async remove(row) {
       this.$confirm(`是否删除分类"${row.name}"`, "提示", {

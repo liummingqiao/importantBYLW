@@ -18,7 +18,12 @@ const schema = new mongoose.Schema({
         descreption : { type: String},
         tips :{ type: String  }
     }],
-    item1:[{ type:mongoose.SchemaTypes.ObjectId, ref:'Item'}],//Downwind equipment 
+    numAll:{type:Number},
+    numKeTing:{type:Number},
+    numChuFang:{type:Number},
+    numWSJ:{type:Number},
+    numQian:{type:Number},
+    item1:{ type:mongoose.SchemaTypes.ObjectId, ref:'Item'},//Downwind equipment 
     item2:[{ type:mongoose.SchemaTypes.ObjectId, ref:'Item'}],//Upwind equipment
     usageTips:{ type: String },
     battleTips:{type: String},

@@ -67,7 +67,7 @@ module.exports = app => {
         //     })
         // }
 
-        const isVaild = require('bcrypt').compareSync(password, user.password)
+        const isVaild = require('bcryptjs').compareSync(password, user.password)
         if (!isVaild) {
             return res.status(422).send({
                 message: "密码错误"
@@ -75,7 +75,7 @@ module.exports = app => {
         }
 
         // const token = jwt.sign({ id: user._id }, app.get('secret'))
-        // res.send({ token })
+        res.send('success')
     })
     //错误处理
     app.use(async (err, req, res, next) => {

@@ -2,18 +2,18 @@
   <div>
     <swiper :options="swiperOption">
       <swiper-slide>
-        <img class="w-100" src="../assets/images/1.jpeg" />
+        <img class="w-100" src="../assets/images/01.jpg" />
       </swiper-slide>
       <swiper-slide>
-        <img class="w-100" src="../assets/images/2.jpeg" />
+        <img class="w-100" src="../assets/images/02.jpg" />
       </swiper-slide>
       <swiper-slide>
-        <img class="w-100" src="../assets/images/5.jpeg" />
+        <img class="w-100" src="../assets/images/04.jpg" />
       </swiper-slide>
       <div class="swiper-pagination pagination-home text-right px-3" slot="pagination"></div>
     </swiper>
     <!-- end of  -->
-    <div class="navBox">
+    <!-- <div class="navBox">
       <div class="navItems d-flex flex-wrap text-center bg-white">
         <div class="navItem mt-3 border-color" v-for=" n in 10 " :key="n">
           <i class="sprite sprite-new"></i>
@@ -24,7 +24,7 @@
         <i class="sprite sprite-up pl-3"></i>
         <span>收起</span>
       </div>
-    </div>
+    </div>-->
     <m-card icon="Menu" title="新闻资讯" :cardlist="newsCard">
       <template #item="{cardlists}">
         <router-link
@@ -41,10 +41,9 @@
         </router-link>
       </template>
     </m-card>
-    <m-card icon="fenlei-yingxionglianmeng
-" title="英雄列表" :cardlist="heroCard">
+    <m-card icon="fenlei-yingxionglianmeng" title="英雄列表" :cardlist="heroCard">
       <template #item="{cardlists}">
-        <div class="d-flex flex-wrap" style="margin-left:1.7rem">
+        <div class="d-flex flex-wrap" style="margin-left:1.7rem;height:25rem">
           <router-link
             tag="div"
             :to="`/hero/${hero._id}`"
@@ -53,14 +52,14 @@
             v-for="(hero,i) in cardlists.herolist"
             :key="i"
           >
-            <img :src="hero.avatar" class="w-100" />
+            <img :src="hero.avatar" class="w-100"  />
             <div>{{hero.name}}</div>
           </router-link>
         </div>
       </template>
     </m-card>
-    <m-card icon="Menu" title="精彩视频"></m-card>
-    <m-card icon="Menu" title="图文攻略"></m-card>
+    <!-- <m-card icon="Menu" title="精彩视频"></m-card>
+    <m-card icon="Menu" title="图文攻略"></m-card> -->
     <!-- <div class="cardc mt-3 py-3 bg-white">
       <div class="card_nav pl-3 d-flex">
         <i class="iconfont icon-Menu pr-3"></i>
@@ -121,11 +120,13 @@ export default {
   methods: {
     async fetchNewsCats() {
       const res = await this.$http.get("news/list");
+      console.log(res, "newslist");
       this.newsCard = res.data;
     },
 
     async fetchHeroCats() {
       const res = await this.$http.get("heros/list");
+      console.log(res, "heroslist");
       this.heroCard = res.data;
     }
   },

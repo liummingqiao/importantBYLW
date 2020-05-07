@@ -3,9 +3,9 @@
     <div class="d-flex border-bottom py-3">
       <div class="iconfont icon-back text-article"></div>
       <!-- <strong> -->
-      <strong class="fs-md text-article f-1 text-ellipsis">{{model.title}}</strong>
+      <strong class="fs-md text-article f-1 text-ellipsis" @click="$router.push('/')">{{model.title}}</strong>
       <!-- </strong> -->
-      <div class="fs-xxs text-grey text-hidden pl-1">2019-09-16</div>
+      <div class="fs-xxs text-grey text-hidden pl-1">2020-5-1</div>
     </div>
      <div v-html="model.body" class="body"></div>
     <div>

@@ -105,7 +105,7 @@ module.exports = app => {
     // 英雄接口
     router.get('/heros/list', async (req, res) => {
         const parent = await Category.findOne().where({
-            name: '英雄分类'
+            name: '房间类型'
         })
         const cats = await Category.aggregate([
             //过滤数据 （查找所有Par字段里边id为Par的字段 ）

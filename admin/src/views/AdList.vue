@@ -1,9 +1,11 @@
 <template>
   <div class="about">
-    <h1>分类列表</h1>
+    <h1>位置信息列表</h1>
     <el-table :data="items">
       <el-table-column prop="_id" label="ID" width="280"></el-table-column>
       <el-table-column prop="name" label="名字"></el-table-column>
+      <el-table-column prop="lat" label="经度"></el-table-column>
+      <el-table-column prop="lng" label="纬度"></el-table-column>
       <el-table-column fixed="right" label="操作" width="180">
         <template slot-scope="scope">
           <el-button
@@ -28,6 +30,7 @@ export default {
   methods: {
     async fetch() {
       const res = await this.$http.get("rest/ads");
+      console.log(res)
       this.items = res.data;
     },
     async remove(row) {

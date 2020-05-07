@@ -4,22 +4,17 @@
       <el-menu router  unique-opened :default-active="$route.path">
         <el-submenu index="1">
           <template slot="title">
-            <i class="el-icon-message"></i>内容管理
+            <i class="el-icon-message"></i>管理
           </template>
           <el-menu-item-group>
-            <template slot="title">物品</template>
-            <el-menu-item index="/items/create">新建物品</el-menu-item>
-            <el-menu-item index="/items/list">物品列表</el-menu-item>
+            <template slot="title">楼栋管理</template>
+            <el-menu-item index="/items/create">添加楼栋</el-menu-item>
+            <el-menu-item index="/items/list">楼栋列表</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group>
-            <template slot="title">英雄</template>
-            <el-menu-item index="/heroes/create">新建英雄</el-menu-item>
-            <el-menu-item index="/heroes/list">英雄列表</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group>
-            <template slot="title">文章</template>
-            <el-menu-item index="/articles/create">新建文章</el-menu-item>
-            <el-menu-item index="/articles/list">文章列表</el-menu-item>
+            <template slot="title">房间管理</template>
+            <el-menu-item index="/heroes/create">新建房间</el-menu-item>
+            <el-menu-item index="/heroes/list">房间列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="2">
@@ -28,9 +23,14 @@
           </template>
           <el-menu-item-group>
             <template slot="title">广告</template>
+            <el-menu-item index="/articles/create">新建广告</el-menu-item>
+            <el-menu-item index="/articles/list">广告列表</el-menu-item>
+          </el-menu-item-group>
+          <!-- <el-menu-item-group>
+            <template slot="title">定位</template>
             <el-menu-item index="/ads/create">新建广告</el-menu-item>
             <el-menu-item index="/ads/list">广告列表</el-menu-item>
-          </el-menu-item-group>
+          </el-menu-item-group> -->
         </el-submenu>
         <el-submenu index="3">
           <template slot="title">
@@ -52,15 +52,15 @@
 
     <el-container>
       <el-header style="text-align: right; font-size: 12px">
-        <el-dropdown>
+        <!-- <el-dropdown>
           <i class="el-icon-setting" style="margin-right: 15px"></i>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>查看</el-dropdown-item>
             <el-dropdown-item>新增</el-dropdown-item>
             <el-dropdown-item>删除</el-dropdown-item>
           </el-dropdown-menu>
-        </el-dropdown>
-        <span>王小虎</span>
+        </el-dropdown> -->
+        <span>管理员用户</span>
       </el-header>
 
       <el-main>

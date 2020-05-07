@@ -26,11 +26,13 @@ export default {
   methods:{
     async login(){
       window.console.log(this.$router)
-      //  const res = await this.$http.post('login',this.model)
+       const res = await this.$http.post('login',this.model)
+       window.console.log(res,'res')
         // window.console.log(res.data)
       //  sessionStorage.token = res.data.token //on cache
         // localStorage.token = res.data.token //cache
         this.$router.push('/')
+          // this.$router.push("/heroes/list");
         this.$message({
           type:'succsee',
           message:'登录成功'

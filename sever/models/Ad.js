@@ -1,11 +1,9 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-    name: { type: String },
-    items: [{
-        image: { type: String },
-        url: { type: String },
-    }]
+        name:{type:String},
+        lat: { type: Number },
+        lng: { type: Number }
 })
 
 module.exports = mongoose.model('Ad', schema) 
